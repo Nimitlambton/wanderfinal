@@ -11,6 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
 
+  
+    @IBOutlet weak var Mapview: UIView!
+
+    @IBOutlet weak var ListView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,7 +28,19 @@ class ViewController: UIViewController {
     @IBAction func Switch(_ sender: UISegmentedControl) {
    
     
-    
+        if sender.selectedSegmentIndex == 0{
+            
+            ListView.alpha = 0
+            Mapview.alpha = 1
+            
+            
+        }
+        else{
+            
+            Mapview.alpha = 0
+            ListView.alpha = 1
+            
+        }
     
         
     }

@@ -19,6 +19,10 @@ class DescVc: UIViewController {
     @IBOutlet weak var UserImage: UIImageView!
     @IBOutlet weak var Latitude: UITextField!
     @IBOutlet weak var Longitude: UITextField!
+  
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,24 @@ class DescVc: UIViewController {
     }
     
 
+    
+    @IBAction func selectDate(_ sender: Any) {
+    
+    
+    }
+    
 
+    @IBAction func selectGender(_ sender: Any) {
+
+    
+    }
+
+    
+    
+    
+    
+    
+    
     
     @IBAction func Save(_ sender: Any) {
    
@@ -35,4 +56,11 @@ class DescVc: UIViewController {
     
     }
     
+    
+
+    
+    
+    
+
+
 }

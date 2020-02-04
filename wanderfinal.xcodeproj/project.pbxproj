@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384C39A023EA1AE5009C4A86 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C399F23EA1AE5009C4A86 /* CountryList.swift */; };
 		9B07BE8F23E322B4003B1DD7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE8E23E322B4003B1DD7 /* MapView.swift */; };
 		9B07BE9123E322CA003B1DD7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE9023E322CA003B1DD7 /* ListView.swift */; };
 		9B07BE9323E334B6003B1DD7 /* DescVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE9223E334B6003B1DD7 /* DescVc.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		384C399F23EA1AE5009C4A86 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
 		9B07BE8E23E322B4003B1DD7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9B07BE9023E322CA003B1DD7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		9B07BE9223E334B6003B1DD7 /* DescVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescVc.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				9B07BE8E23E322B4003B1DD7 /* MapView.swift */,
 				9B07BE9023E322CA003B1DD7 /* ListView.swift */,
 				9B07BE9223E334B6003B1DD7 /* DescVc.swift */,
+				384C399F23EA1AE5009C4A86 /* CountryList.swift */,
 			);
 			path = wanderfinal;
 			sourceTree = "<group>";
@@ -111,6 +114,7 @@
 				TargetAttributes = {
 					9B6F639523E224760000A6CB = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -154,6 +158,7 @@
 				9B6F639A23E224760000A6CB /* AppDelegate.swift in Sources */,
 				9B07BE9123E322CA003B1DD7 /* ListView.swift in Sources */,
 				9B07BE8F23E322B4003B1DD7 /* MapView.swift in Sources */,
+				384C39A023EA1AE5009C4A86 /* CountryList.swift in Sources */,
 				9B07BE9323E334B6003B1DD7 /* DescVc.swift in Sources */,
 				9B6F639C23E224760000A6CB /* SceneDelegate.swift in Sources */,
 				9B6F63A423E224760000A6CB /* wanderfinal.xcdatamodeld in Sources */,
@@ -300,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = wanderfinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -308,6 +314,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CestarCollege.wanderfinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -317,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = wanderfinal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

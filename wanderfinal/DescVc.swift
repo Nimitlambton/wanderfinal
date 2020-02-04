@@ -23,16 +23,35 @@ class DescVc: UIViewController  {
     var pickerData: [String] = [String]()
     let datepicker = UIDatePicker()
     
-    
-  
-    
+    var image: UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createdatepicker()
         pickgender.isHidden = true
 
     }
+ 
     
+    
+    
+    
+    func show(image: UIImage) {
+    UserImage.image = image
+    UserImage.isHidden = false
+//    UserImage.frame = CGRect(x: 10, y: 10, width: 260,height: 260)
+
+    }
+    
+    
+    
+    
+    @IBAction func selectphoto(_ sender: Any) {
+  
+    choosePhotoFromLibrary()
+
+    
+    }
     
     
     
@@ -91,6 +110,10 @@ class DescVc: UIViewController  {
 
 }
 
+
+
+
+
 //descVC delegates
 extension DescVc :UIPickerViewDelegate,
 UIPickerViewDataSource{
@@ -121,4 +144,53 @@ UIPickerViewDataSource{
         
     }
 }
+
+extension DescVc:UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+    
+    func takePhotoWithCamera() {
+    let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
+    
+
+    }
+    
+    
+    
+    
+        func choosePhotoFromLibrary() {
+       
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
+        }
+    
+        // MARK:- Image Picker Delegates
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+          dismiss(animated: true, completion: nil)
+        }
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+          dismiss(animated: true, completion: nil)
+        }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+
+        
+        if let theImage = image {
+               show(image: theImage)
+             }
+             dismiss(animated: true, completion: nil)
+           }
+        
+    }
+    
+    
+    
+    
 

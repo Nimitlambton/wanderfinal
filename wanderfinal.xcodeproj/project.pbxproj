@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		384C39A023EA1AE5009C4A86 /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C399F23EA1AE5009C4A86 /* CountryList.swift */; };
+		384C39A623EA4942009C4A86 /* tabelcontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C39A523EA4942009C4A86 /* tabelcontrol.swift */; };
 		9B07BE8F23E322B4003B1DD7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE8E23E322B4003B1DD7 /* MapView.swift */; };
 		9B07BE9123E322CA003B1DD7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE9023E322CA003B1DD7 /* ListView.swift */; };
 		9B07BE9323E334B6003B1DD7 /* DescVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE9223E334B6003B1DD7 /* DescVc.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		384C399F23EA1AE5009C4A86 /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
+		384C39A523EA4942009C4A86 /* tabelcontrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabelcontrol.swift; sourceTree = "<group>"; };
 		9B07BE8E23E322B4003B1DD7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9B07BE9023E322CA003B1DD7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		9B07BE9223E334B6003B1DD7 /* DescVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescVc.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 				9B07BE8E23E322B4003B1DD7 /* MapView.swift */,
 				9B07BE9023E322CA003B1DD7 /* ListView.swift */,
 				9B07BE9223E334B6003B1DD7 /* DescVc.swift */,
-				384C399F23EA1AE5009C4A86 /* CountryList.swift */,
+				384C39A523EA4942009C4A86 /* tabelcontrol.swift */,
 			);
 			path = wanderfinal;
 			sourceTree = "<group>";
@@ -158,9 +158,9 @@
 				9B6F639A23E224760000A6CB /* AppDelegate.swift in Sources */,
 				9B07BE9123E322CA003B1DD7 /* ListView.swift in Sources */,
 				9B07BE8F23E322B4003B1DD7 /* MapView.swift in Sources */,
-				384C39A023EA1AE5009C4A86 /* CountryList.swift in Sources */,
 				9B07BE9323E334B6003B1DD7 /* DescVc.swift in Sources */,
 				9B6F639C23E224760000A6CB /* SceneDelegate.swift in Sources */,
+				384C39A623EA4942009C4A86 /* tabelcontrol.swift in Sources */,
 				9B6F63A423E224760000A6CB /* wanderfinal.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

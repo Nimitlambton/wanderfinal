@@ -11,8 +11,6 @@ import UIKit
 class DescVc: UIViewController  {
 
     @IBOutlet weak var UserName: UITextField!
-   
-
     @IBOutlet weak var Birthday: UITextField!
     @IBOutlet weak var UserImage: UIImageView!
     @IBOutlet weak var Latitude: UITextField!
@@ -20,27 +18,32 @@ class DescVc: UIViewController  {
     @IBOutlet weak var pickgender: UIPickerView!
     @IBOutlet weak var Gender: UILabel!
     
+    
     var pickerData: [String] = [String]()
     let datepicker = UIDatePicker()
     
+    var countryname : String?
     var image: UIImage?
 
+    @IBOutlet weak var countrylabel: UILabel!
+   
+    
     override func viewDidLoad() {
+       
         super.viewDidLoad()
+        
         createdatepicker()
+        
         pickgender.isHidden = true
-
+        countrylabel.text  = countryname
+        
     }
  
-    
-    
-    
+
     
     func show(image: UIImage) {
     UserImage.image = image
     UserImage.isHidden = false
-//    UserImage.frame = CGRect(x: 10, y: 10, width: 260,height: 260)
-
     }
     
     
@@ -50,14 +53,12 @@ class DescVc: UIViewController  {
   
     choosePhotoFromLibrary()
 
-    
     }
     
     
     
     func createdatepicker()  {
- 
-        
+
         Birthday.inputView = datepicker
         
         let toolbar = UIToolbar()
@@ -84,28 +85,11 @@ class DescVc: UIViewController  {
     }
 
     @IBAction func SelectG(_ sender: Any) {
-        pickgender.isHidden = false
+    pickgender.isHidden = false
     pickgender.dataSource = self
    pickgender.delegate = self
    pickerData = ["Male","Female","other"]
-    
-                   let toolbar = UIToolbar()
-                        
-                          toolbar.sizeToFit()
-                          
-           let donebutton = UIBarButtonItem(barButtonSystemItem: .done, target: nil,action:#selector(doneclicked2))
 
-               toolbar.setItems([donebutton], animated: true)
-
-       
-    
-    }
-    
- 
-    @objc func doneclicked2(){
-     
-        Gender.text = "helloworld"
-        
     }
 
 }

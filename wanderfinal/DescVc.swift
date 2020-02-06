@@ -24,40 +24,45 @@ class DescVc: UIViewController  {
     var countryname : String?
     var image: UIImage?
 
+    
+    
+
+    
     @IBOutlet weak var countrylabel: UILabel!
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createdatepicker()
-        pickgender.isHidden = true
-        countrylabel.text  = countryname
        
-        
+        createdatepicker()
+      
+        pickgender.isHidden = true
+       
+        countrylabel.text  = countryname
+    
         
     }
  
 
-    
-    func show(image: UIImage) {
-  
-    UserImage.image = image
-    UserImage.isHidden = false
-   
-    
-    }
-    
-    
-    
-    
-    @IBAction func selectphoto(_ sender: Any) {
-  
-    choosePhotoFromLibrary()
+    @IBAction func selectcon(_ sender: Any) {
 
     }
     
     
-        
+    
+    func show(image: UIImage) {
+    UserImage.image = image
+    UserImage.isHidden = false
+
+    }
+    
+
+    @IBAction func selectphoto(_ sender: Any) {
+    choosePhotoFromLibrary()
+    }
+    
+    
+    
             func createdatepicker()  {
 
                 Birthday.inputView = datepicker
@@ -72,6 +77,7 @@ class DescVc: UIViewController  {
                 
                 Birthday.inputAccessoryView = toolbar
             }
+    
 
     @objc func doneclicked(){
 
@@ -86,23 +92,44 @@ class DescVc: UIViewController  {
     pickgender.dataSource = self
    pickgender.delegate = self
    pickerData = ["Male","Female","other"]
-        
-        
     }
 
     
     @IBAction func Save(_ sender: Any) {
-    
-        print(UserName.text!,Birthday.text!,Gender.text!,countryname!,Latitude.text!,Longitude.text!)
+
+        let slad = Double(Latitude.text!)
+        let slon = Double(Longitude.text!)
         
+    let cpp = Person(context: ViewController.managedContext)
+  
+
+        cpp.name = UserName.text
+        cpp.country = countryname
+        cpp.gender = Gender.text
+        //cpp.birthday = Date(Birthday.text)
+       
         
-     
+        if let image = image {
+          if !cpp.hasPhoto {
+            cpp.photoID = Person.nextPhotoID() as NSNumber
+          }
+            if let data = image.jpegData(compressionQuality: 0.5) {
+            do {
+              try data.write(to: cpp.photoURL, options: .atomic)
+            } catch {
+              print("Error writing file: \(error)")
+            }
+          }
+        }
         
-        
+        cpp.lat = slad!
+        cpp.lad = slon!
+
+        try! ViewController.managedContext.save()
+        print("saved S")
+   
      }
-    
-    
-    
+ 
     
 }
 

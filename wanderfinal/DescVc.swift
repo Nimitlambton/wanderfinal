@@ -21,7 +21,6 @@ class DescVc: UIViewController  {
     
     var pickerData: [String] = [String]()
     let datepicker = UIDatePicker()
-    
     var countryname : String?
     var image: UIImage?
 
@@ -29,21 +28,23 @@ class DescVc: UIViewController  {
    
     
     override func viewDidLoad() {
-       
         super.viewDidLoad()
-        
         createdatepicker()
-        
         pickgender.isHidden = true
         countrylabel.text  = countryname
+       
+        
         
     }
  
 
     
     func show(image: UIImage) {
+  
     UserImage.image = image
     UserImage.isHidden = false
+   
+    
     }
     
     
@@ -56,21 +57,21 @@ class DescVc: UIViewController  {
     }
     
     
-    
-    func createdatepicker()  {
+        
+            func createdatepicker()  {
 
-        Birthday.inputView = datepicker
-        
-        let toolbar = UIToolbar()
-      
-        toolbar.sizeToFit()
-        
-   let donebutton = UIBarButtonItem(barButtonSystemItem: .reply, target: nil,action:#selector(doneclicked))
-  
-        toolbar.setItems([donebutton], animated: true)
-        
-        Birthday.inputAccessoryView = toolbar
-    }
+                Birthday.inputView = datepicker
+                
+                let toolbar = UIToolbar()
+              
+                toolbar.sizeToFit()
+                
+      let donebutton = UIBarButtonItem(barButtonSystemItem: .reply, target: nil,action:#selector(doneclicked))
+          
+                toolbar.setItems([donebutton], animated: true)
+                
+                Birthday.inputAccessoryView = toolbar
+            }
 
     @objc func doneclicked(){
 
@@ -78,24 +79,32 @@ class DescVc: UIViewController  {
         self.view.endEditing(true)
     }
  
-    @IBAction func Save(_ sender: Any) {
-   
-    print("saved")
-    
-    }
+ 
 
     @IBAction func SelectG(_ sender: Any) {
     pickgender.isHidden = false
     pickgender.dataSource = self
    pickgender.delegate = self
    pickerData = ["Male","Female","other"]
-
+        
+        
     }
 
+    
+    @IBAction func Save(_ sender: Any) {
+    
+        print(UserName.text!,Birthday.text!,Gender.text!,countryname!,Latitude.text!,Longitude.text!)
+        
+        
+     
+        
+        
+     }
+    
+    
+    
+    
 }
-
-
-
 
 
 //descVC delegates
@@ -140,10 +149,7 @@ extension DescVc:UIImagePickerControllerDelegate , UINavigationControllerDelegat
     
 
     }
-    
-    
-    
-    
+
         func choosePhotoFromLibrary() {
        
             let imagePicker = UIImagePickerController()

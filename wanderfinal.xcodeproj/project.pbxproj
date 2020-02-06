@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		384C39A623EA4942009C4A86 /* tabelcontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C39A523EA4942009C4A86 /* tabelcontrol.swift */; };
+		384CB0EE23EBABC400A91B2A /* coreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CB0ED23EBABC400A91B2A /* coreDataStack.swift */; };
+		384D2C2523EA839F003D6FDB /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384D2C2323EA839F003D6FDB /* Person+CoreDataClass.swift */; };
+		384D2C2623EA839F003D6FDB /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384D2C2423EA839F003D6FDB /* Person+CoreDataProperties.swift */; };
+		3858DD3A23EC66980013B642 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858DD3923EC66980013B642 /* Functions.swift */; };
 		9B07BE8F23E322B4003B1DD7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE8E23E322B4003B1DD7 /* MapView.swift */; };
 		9B07BE9123E322CA003B1DD7 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE9023E322CA003B1DD7 /* ListView.swift */; };
 		9B07BE9323E334B6003B1DD7 /* DescVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07BE9223E334B6003B1DD7 /* DescVc.swift */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		384C39A523EA4942009C4A86 /* tabelcontrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabelcontrol.swift; sourceTree = "<group>"; };
+		384CB0ED23EBABC400A91B2A /* coreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = coreDataStack.swift; path = ../../cdcrud/Crud/coreDataStack.swift; sourceTree = "<group>"; };
+		384D2C2323EA839F003D6FDB /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		384D2C2423EA839F003D6FDB /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3858DD3923EC66980013B642 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = "../../iOS_Apprentice_v6.0_第六版/my-locations/Source Code/30-Image Picker/chapter-30-final/MyLocations/Functions.swift"; sourceTree = "<group>"; };
 		9B07BE8E23E322B4003B1DD7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9B07BE9023E322CA003B1DD7 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		9B07BE9223E334B6003B1DD7 /* DescVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescVc.swift; sourceTree = "<group>"; };
@@ -50,6 +58,8 @@
 		9B6F638D23E224760000A6CB = {
 			isa = PBXGroup;
 			children = (
+				384D2C2323EA839F003D6FDB /* Person+CoreDataClass.swift */,
+				384D2C2423EA839F003D6FDB /* Person+CoreDataProperties.swift */,
 				9B6F639823E224760000A6CB /* wanderfinal */,
 				9B6F639723E224760000A6CB /* Products */,
 			);
@@ -71,6 +81,7 @@
 				9B6F639D23E224760000A6CB /* ViewController.swift */,
 				9B6F639F23E224760000A6CB /* Main.storyboard */,
 				9B6F63A523E2247A0000A6CB /* Assets.xcassets */,
+				3858DD3923EC66980013B642 /* Functions.swift */,
 				9B6F63A723E2247A0000A6CB /* LaunchScreen.storyboard */,
 				9B6F63AA23E2247A0000A6CB /* Info.plist */,
 				9B6F63A223E224760000A6CB /* wanderfinal.xcdatamodeld */,
@@ -78,6 +89,7 @@
 				9B07BE9023E322CA003B1DD7 /* ListView.swift */,
 				9B07BE9223E334B6003B1DD7 /* DescVc.swift */,
 				384C39A523EA4942009C4A86 /* tabelcontrol.swift */,
+				384CB0ED23EBABC400A91B2A /* coreDataStack.swift */,
 			);
 			path = wanderfinal;
 			sourceTree = "<group>";
@@ -155,13 +167,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B6F639E23E224760000A6CB /* ViewController.swift in Sources */,
+				384CB0EE23EBABC400A91B2A /* coreDataStack.swift in Sources */,
 				9B6F639A23E224760000A6CB /* AppDelegate.swift in Sources */,
 				9B07BE9123E322CA003B1DD7 /* ListView.swift in Sources */,
 				9B07BE8F23E322B4003B1DD7 /* MapView.swift in Sources */,
 				9B07BE9323E334B6003B1DD7 /* DescVc.swift in Sources */,
+				384D2C2523EA839F003D6FDB /* Person+CoreDataClass.swift in Sources */,
+				384D2C2623EA839F003D6FDB /* Person+CoreDataProperties.swift in Sources */,
 				9B6F639C23E224760000A6CB /* SceneDelegate.swift in Sources */,
 				384C39A623EA4942009C4A86 /* tabelcontrol.swift in Sources */,
 				9B6F63A423E224760000A6CB /* wanderfinal.xcdatamodeld in Sources */,
+				3858DD3A23EC66980013B642 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

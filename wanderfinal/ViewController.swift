@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import  CoreData
 
 class ViewController: UIViewController {
 
+    
+    
+    static var managedContext: NSManagedObjectContext!
 
   
     @IBOutlet weak var Mapview: UIView!

@@ -303,8 +303,11 @@ class tabelcontrol: UITableViewController {
      let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "descVc") as? DescVc
      
       
-        vc?.countryname = countryname
-     self.navigationController?.pushViewController(vc!, animated: true)
+      vc?.countryname = countryname
+     
+        self.navigationController?.pushViewController(vc!, animated: true)
+   
+    
     }
 
     

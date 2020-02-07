@@ -17,9 +17,27 @@ public class Person: NSManagedObject , MKAnnotation{
     
     
     public var coordinate: CLLocationCoordinate2D {
-     return CLLocationCoordinate2DMake(lat, lad)
+     
+        return CLLocationCoordinate2DMake(lat, lad)
   
     }
+    
+    public var title: String? {
+     
+        return name
+      
+    }
+    
+    
+    public var subtitle: String? {
+  
+        
+        
+        return gender
+    
+}
+    
+    
     
     var hasPhoto: Bool {
      

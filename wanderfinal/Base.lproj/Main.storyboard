@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.68115942029" y="-362.27678571428572"/>
+            <point key="canvasLocation" x="2019" y="-362"/>
         </scene>
         <!--Desc Vc-->
         <scene sceneID="EAI-xD-Jna">
@@ -208,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIu-fV-F6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2557.971014492754" y="-362.27678571428572"/>
+            <point key="canvasLocation" x="2823" y="-362"/>
         </scene>
         <!--Tabelcontrol-->
         <scene sceneID="fWD-pc-uWd">
@@ -238,7 +238,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5k-Xw-TOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3335" y="-362"/>
+            <point key="canvasLocation" x="3803" y="-388"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KOv-4K-yd2">
@@ -270,6 +270,20 @@
                                 <rect key="frame" x="0.0" y="58" width="414" height="716"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="tUt-r8-CbR">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tUt-r8-CbR" id="ZTt-dI-izQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5zi-0H-aLo" id="4gL-dG-Jga"/>
+                                    <outlet property="delegate" destination="5zi-0H-aLo" id="JOj-UF-EwZ"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vJQ-ac-TNT">
                                 <rect key="frame" x="0.0" y="14" width="425" height="44"/>
@@ -280,10 +294,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4XO-WO-91Y"/>
                     </view>
+                    <connections>
+                        <outlet property="mytab" destination="d4k-5l-4Q4" id="sw6-zb-iRB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpJ-cH-Eek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161" y="316"/>
+            <point key="canvasLocation" x="2462" y="306"/>
         </scene>
         <!--Map View-->
         <scene sceneID="4jL-Cd-E7I">
@@ -300,18 +317,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="meb-k3-mfh">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="meb-k3-mfh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="760"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gOq-mm-kYX" id="lhu-qA-Hbn"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="eis-9f-oBc"/>
                     </view>
+                    <connections>
+                        <outlet property="mymap" destination="meb-k3-mfh" id="y91-FY-xS1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAH-BG-qai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424.6376811594205" y="310.71428571428572"/>
+            <point key="canvasLocation" x="1581" y="311"/>
         </scene>
     </scenes>
 </document>

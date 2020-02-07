@@ -51,7 +51,9 @@ class DescVc: UIViewController  {
     
     
     func show(image: UIImage) {
-    UserImage.image = image
+   
+        
+        UserImage.image = image
     UserImage.isHidden = false
 
     }

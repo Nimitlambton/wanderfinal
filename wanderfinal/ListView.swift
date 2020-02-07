@@ -7,24 +7,66 @@
 //
 
 import UIKit
+import CoreData
 
 class ListView: UIViewController {
 
+    @IBOutlet weak var mytab: UITableView!
+    
+    var personlist = [Person]()
+    
+  var p = [Person]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        p = fetchRecords()
+   
+    }
+    func fetchRecords() -> [Person]{
+          //
+        
+        let fetchRequest = NSFetchRequest<Person>(entityName: "Person")
+           
+           do{
+            
+               personlist = try ViewController.managedContext.fetch(fetchRequest)
+           }catch{
+               print(error)
+           }
+           return personlist
+       }
 
-        // Do any additional setup after loading the view.
+    
+    
+    
+}
+
+
+extension ListView :UITableViewDataSource , UITableViewDelegate{
+   
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        p.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        cell.textLabel?.text = p[indexPath.row].name! + " " + "\(String(describing: p[indexPath.row].photoImage))" + " " + ""
+        
+        return cell
     }
-    */
-
+    
+    
+    
+    
 }
+
+
+
+
+
+

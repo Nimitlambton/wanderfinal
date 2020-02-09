@@ -23,6 +23,8 @@ class ListView: UIViewController {
         super.viewDidLoad()
         p = fetchRecords()
    
+
+        
     }
     func fetchRecords() -> [Person]{
           //
@@ -53,10 +55,12 @@ extension ListView :UITableViewDataSource , UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        cell.textLabel?.text = p[indexPath.row].name! + " " + "\(String(describing: p[indexPath.row].photoImage))" + " " + ""
+     let cell = tableView.dequeueReusableCell(withIdentifier: "abc", for: indexPath) as! cellcontrol
+  
+        //cell.name.text = p[indexPath.row].name
         
+    cell.name.text = p[indexPath.row].name
+        cell.img.image = p[indexPath.row].photoImage
         return cell
     }
     

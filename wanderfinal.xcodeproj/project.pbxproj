@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384619AD23EF7C9B00855534 /* cellcontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384619AC23EF7C9B00855534 /* cellcontrol.swift */; };
 		384C39A623EA4942009C4A86 /* tabelcontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C39A523EA4942009C4A86 /* tabelcontrol.swift */; };
 		384CB0EE23EBABC400A91B2A /* coreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CB0ED23EBABC400A91B2A /* coreDataStack.swift */; };
 		384D2C2523EA839F003D6FDB /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384D2C2323EA839F003D6FDB /* Person+CoreDataClass.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		384619AC23EF7C9B00855534 /* cellcontrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellcontrol.swift; sourceTree = "<group>"; };
 		384C39A523EA4942009C4A86 /* tabelcontrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabelcontrol.swift; sourceTree = "<group>"; };
 		384CB0ED23EBABC400A91B2A /* coreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = coreDataStack.swift; path = ../../cdcrud/Crud/coreDataStack.swift; sourceTree = "<group>"; };
 		384D2C2323EA839F003D6FDB /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				9B07BE9223E334B6003B1DD7 /* DescVc.swift */,
 				384C39A523EA4942009C4A86 /* tabelcontrol.swift */,
 				384CB0ED23EBABC400A91B2A /* coreDataStack.swift */,
+				384619AC23EF7C9B00855534 /* cellcontrol.swift */,
 			);
 			path = wanderfinal;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				384CB0EE23EBABC400A91B2A /* coreDataStack.swift in Sources */,
 				9B6F639A23E224760000A6CB /* AppDelegate.swift in Sources */,
 				9B07BE9123E322CA003B1DD7 /* ListView.swift in Sources */,
+				384619AD23EF7C9B00855534 /* cellcontrol.swift in Sources */,
 				9B07BE8F23E322B4003B1DD7 /* MapView.swift in Sources */,
 				9B07BE9323E334B6003B1DD7 /* DescVc.swift in Sources */,
 				384D2C2523EA839F003D6FDB /* Person+CoreDataClass.swift in Sources */,

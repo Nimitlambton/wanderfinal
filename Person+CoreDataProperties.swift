@@ -26,6 +26,7 @@ extension Person {
     @NSManaged public var lat: Double
     @NSManaged public var name: String?
     @NSManaged public var photo: Data?
+    
     @NSManaged public var photoID: NSNumber?
 
 }

@@ -15,8 +15,12 @@ class cellcontrol: UITableViewCell {
     
     
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var birthday: UILabel!
+    @IBOutlet weak var gender: UILabel!
+    @IBOutlet weak var country: UILabel!
     
     @IBOutlet weak var img: UIImageView!
+ 
     
     override func awakeFromNib() {
         super.awakeFromNib()

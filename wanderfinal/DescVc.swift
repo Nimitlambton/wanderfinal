@@ -112,20 +112,31 @@ class DescVc: UIViewController  {
        
         
         if let image = image {
-          if !cpp.hasPhoto {
+         
+            if cpp.hasPhoto {
+            
             cpp.photoID = Person.nextPhotoID() as NSNumber
-          }
+        
+            print("this is pohotot\(cpp.photoID)")
+          
+            
+            }
             if let data = image.jpegData(compressionQuality: 0.5) {
+                
             do {
+               
               try data.write(to: cpp.photoURL, options: .atomic)
             } catch {
-              print("Error writing file: \(error)")
-            }
+              
+                print("Error writing file: \(error)")
+            
+                }
           }
         }
         
-        cpp.lat = slad!
-        cpp.lad = slon!
+        cpp.lat = slad! ?? 0.0
+        
+        cpp.lad = slon! ?? 0.0
 
         try! ViewController.managedContext.save()
         print("saved S")

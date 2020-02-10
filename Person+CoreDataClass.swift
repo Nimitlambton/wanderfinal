@@ -11,6 +11,7 @@ import Foundation
 import CoreData
 import MapKit
 
+
 @objc(Person)
 public class Person: NSManagedObject , MKAnnotation{
     
@@ -62,9 +63,12 @@ public class Person: NSManagedObject , MKAnnotation{
     
     class func nextPhotoID() -> Int {
     let userDefaults = UserDefaults.standard
-        let currentID = userDefaults.integer(forKey: "PhotoID") + 1; userDefaults.set(currentID, forKey: "PhotoID"); userDefaults.synchronize()
- 
+        let currentID = userDefaults.integer(forKey: "PhotoID") + 2; userDefaults.set(currentID, forKey: "PhotoID");
+        userDefaults.synchronize()
+        print(currentID)
         return currentID
+        
+        
  
     }
     

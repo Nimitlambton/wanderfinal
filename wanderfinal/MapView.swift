@@ -35,9 +35,7 @@ class MapView: UIViewController {
           fetchreq.entity = entity
          
          locations = try! ViewController.managedContext.fetch(fetchreq)
-           
-        print(locations)
-        
+      
         mymap.addAnnotations(locations)
     
      }
@@ -45,7 +43,7 @@ class MapView: UIViewController {
     
     @objc func showLocationDetails(){
         
-        print("helloworld")
+       
     
     }
    
@@ -58,7 +56,7 @@ extension MapView : MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
        
         guard annotation is Person else {
-           print("hey this is not pin")
+         
             return nil
         }
         //2

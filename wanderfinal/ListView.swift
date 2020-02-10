@@ -35,7 +35,8 @@ class ListView: UIViewController {
             
                personlist = try ViewController.managedContext.fetch(fetchRequest)
            }catch{
-               print(error)
+               
+            print(error)
            }
            return personlist
        }
@@ -60,8 +61,13 @@ extension ListView :UITableViewDataSource , UITableViewDelegate{
         //cell.name.text = p[indexPath.row].name
         
     cell.name.text = p[indexPath.row].name
+    cell.birthday.text = "\((p[indexPath.row].birthday))"
+    cell.gender.text =  p[indexPath.row].gender
+    cell.country.text = p[indexPath.row].country
         cell.img.image = p[indexPath.row].photoImage
         return cell
+   
+    
     }
     
     

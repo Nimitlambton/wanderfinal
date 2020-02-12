@@ -141,7 +141,11 @@ class DescVc: UIViewController  {
         try! ViewController.managedContext.save()
         print("saved S")
    
-     }
+         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ListView") as? ListView
+        
+        self.navigationController?.popToRootViewController(animated: true)
+     
+    }
  
     
 }
@@ -218,6 +222,8 @@ extension DescVc:UIImagePickerControllerDelegate , UINavigationControllerDelegat
              dismiss(animated: true, completion: nil)
            }
         
+    
+    
     }
     
     

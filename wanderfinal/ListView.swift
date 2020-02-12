@@ -58,16 +58,26 @@ extension ListView :UITableViewDataSource , UITableViewDelegate{
         
      let cell = tableView.dequeueReusableCell(withIdentifier: "abc", for: indexPath) as! cellcontrol
   
-        //cell.name.text = p[indexPath.row].name
-        
+    
     cell.name.text = p[indexPath.row].name
-    cell.birthday.text = "\((p[indexPath.row].birthday))"
+    cell.birthday.text = "\(String(describing: (p[indexPath.row].birthday)))"
     cell.gender.text =  p[indexPath.row].gender
     cell.country.text = p[indexPath.row].country
         cell.img.image = p[indexPath.row].photoImage
         return cell
    
     
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(indexPath.row)
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "abc") as? DescVc
+        
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
     
     

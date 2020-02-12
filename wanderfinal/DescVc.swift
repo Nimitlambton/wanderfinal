@@ -19,7 +19,11 @@ class DescVc: UIViewController  {
     @IBOutlet weak var pickgender: UIPickerView!
     @IBOutlet weak var Gender: UILabel!
     @IBOutlet weak var countrylabel: UILabel!
-     var p = [Person]()
+    
+     var locationToEdit: Person?
+     
+    
+    var p = [Person]()
      var persondesc :Person?
     
     var pickerData: [String] = [String]()
@@ -42,16 +46,15 @@ class DescVc: UIViewController  {
     
            p = fetchRecords()
         
+       
+        if !save{
         if indexEdit != nil {
                   
                   print(p[indexEdit!])
               
                   persondesc = p[indexEdit!]
 //
-//                  longi.text = String( p[indexEdit!].long)
-//                  lat.text = String( p[indexEdit!].lat)
-//                  locationTitle.text = String(p[indexEdit!].locationtitle!)
-//                  locationSubtitle.text = String(p[indexEdit!].locationsubtitile!)
+//
 
             UserName.text = String( p[indexEdit!].name!)
            // Birthday.text = String(p[indexEdit!].birthday!)
@@ -60,12 +63,17 @@ class DescVc: UIViewController  {
             Latitude.text = String(p[indexEdit!].lat)
             Longitude.text = String(p[indexEdit!].lad)
                   
+            
               }
         if p[indexEdit!].hasPhoto {
           if let theImage = p[indexEdit!].photoImage {
                    show(image: theImage)
                  }
         }
+        
+                  
+        }
+        
         
         
     }
@@ -138,6 +146,72 @@ class DescVc: UIViewController  {
 
     
     @IBAction func Save(_ sender: Any) {
+ 
+        
+        if !save{
+            print("time to edit")
+            
+            
+            if let mapde = persondesc{
+                
+          let slad = Double(Latitude.text!)
+          let slon = Double(Longitude.text!)
+
+                mapde.name = UserName.text
+                mapde.gender = Gender.text
+                mapde.country = countrylabel.text
+                mapde.lad = slad ?? 0.0
+                mapde.lat = slon ?? 0.0
+            
+                if let image = image {
+                 
+                    if mapde.hasPhoto {
+                    
+                    mapde.photoID = Person.nextPhotoID() as NSNumber
+                
+                    print("this is pohotot\(mapde.photoID)")
+                  
+                    
+                    }
+                    if let data = image.jpegData(compressionQuality: 0.5) {
+                        
+                    do {
+                       
+                      try data.write(to: mapde.photoURL, options: .atomic)
+                    } catch {
+                      
+                        print("Error writing file: \(error)")
+                    
+                        }
+                  }
+                }
+                
+                
+            
+                 locationToEdit = mapde
+                
+                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ListView") as? ListView
+                
+                self.navigationController?.popToRootViewController(animated: true)
+                
+                try! ViewController.managedContext.save()
+                
+            }
+            else {
+                
+                print("void")
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        else{
 
         let slad = Double(Latitude.text!)
         let slon = Double(Longitude.text!)
@@ -146,7 +220,7 @@ class DescVc: UIViewController  {
        cpp.name = UserName.text
         cpp.country = countryname
         cpp.gender = Gender.text
-        //cpp.birthday = Date(Birthday.text)
+       // cpp.birthday = Date(Birthday.text)
        
         
         if let image = image {
@@ -183,8 +257,9 @@ class DescVc: UIViewController  {
         
         self.navigationController?.popToRootViewController(animated: true)
      
+     }
+    
     }
- 
     
 }
 

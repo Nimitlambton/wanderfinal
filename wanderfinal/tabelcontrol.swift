@@ -297,10 +297,10 @@ class tabelcontrol: UITableViewController {
   
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    var countryname = countryList[indexPath.row]
+       var countryname = countryList[indexPath.row]
         
 
-     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "descVc") as? DescVc
+     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "abc") as? DescVc
      
       
       vc?.countryname = countryname

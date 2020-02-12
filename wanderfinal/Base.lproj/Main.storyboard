@@ -48,7 +48,7 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="FzL-qo-Bb1">
                             <connections>
-                                <segue destination="Uak-Kk-8zN" kind="push" id="pL0-2F-yeu"/>
+                                <action selector="add:" destination="BYZ-38-t0r" id="Xur-cO-CwI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -215,7 +215,7 @@
             <objects>
                 <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="CDD-RA-fG4" customClass="tabelcontrol" customModule="wanderfinal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="15Z-mG-WrD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -330,6 +330,9 @@
                                 <rect key="frame" x="0.0" y="14" width="425" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5zi-0H-aLo" id="x3q-BG-LuY"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -337,6 +340,7 @@
                     </view>
                     <connections>
                         <outlet property="mytab" destination="d4k-5l-4Q4" id="sw6-zb-iRB"/>
+                        <outlet property="search" destination="vJQ-ac-TNT" id="mDi-Vx-hzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpJ-cH-Eek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

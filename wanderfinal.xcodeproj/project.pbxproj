@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		384619AD23EF7C9B00855534 /* cellcontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384619AC23EF7C9B00855534 /* cellcontrol.swift */; };
+		384BBAD823F4736500F67D40 /* nodatacell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384BBAD623F4736500F67D40 /* nodatacell.swift */; };
+		384BBAD923F4736500F67D40 /* nodatacell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384BBAD723F4736500F67D40 /* nodatacell.xib */; };
 		384C39A623EA4942009C4A86 /* tabelcontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C39A523EA4942009C4A86 /* tabelcontrol.swift */; };
 		384CB0EE23EBABC400A91B2A /* coreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CB0ED23EBABC400A91B2A /* coreDataStack.swift */; };
 		384D2C2523EA839F003D6FDB /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384D2C2323EA839F003D6FDB /* Person+CoreDataClass.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		384619AC23EF7C9B00855534 /* cellcontrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellcontrol.swift; sourceTree = "<group>"; };
+		384BBAD623F4736500F67D40 /* nodatacell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nodatacell.swift; sourceTree = "<group>"; };
+		384BBAD723F4736500F67D40 /* nodatacell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = nodatacell.xib; sourceTree = "<group>"; };
 		384C39A523EA4942009C4A86 /* tabelcontrol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabelcontrol.swift; sourceTree = "<group>"; };
 		384CB0ED23EBABC400A91B2A /* coreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = coreDataStack.swift; path = ../../cdcrud/Crud/coreDataStack.swift; sourceTree = "<group>"; };
 		384D2C2323EA839F003D6FDB /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				384C39A523EA4942009C4A86 /* tabelcontrol.swift */,
 				384CB0ED23EBABC400A91B2A /* coreDataStack.swift */,
 				384619AC23EF7C9B00855534 /* cellcontrol.swift */,
+				384BBAD623F4736500F67D40 /* nodatacell.swift */,
+				384BBAD723F4736500F67D40 /* nodatacell.xib */,
 			);
 			path = wanderfinal;
 			sourceTree = "<group>";
@@ -158,6 +164,7 @@
 			files = (
 				9B6F63A923E2247A0000A6CB /* LaunchScreen.storyboard in Resources */,
 				9B6F63A623E2247A0000A6CB /* Assets.xcassets in Resources */,
+				384BBAD923F4736500F67D40 /* nodatacell.xib in Resources */,
 				9B6F63A123E224760000A6CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +188,7 @@
 				9B6F639C23E224760000A6CB /* SceneDelegate.swift in Sources */,
 				384C39A623EA4942009C4A86 /* tabelcontrol.swift in Sources */,
 				9B6F63A423E224760000A6CB /* wanderfinal.xcdatamodeld in Sources */,
+				384BBAD823F4736500F67D40 /* nodatacell.swift in Sources */,
 				3858DD3A23EC66980013B642 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

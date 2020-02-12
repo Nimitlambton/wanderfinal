@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var Mapview: UIView!
     @IBOutlet weak var ListView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -34,8 +36,18 @@ class ViewController: UIViewController {
             ListView.alpha = 1
             
         }
+    }
     
+   
+    
+    
+    @IBAction func add(_ sender: Any) {
+    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "abc") as? DescVc
+         
         
+         vc?.save = true
+         self.navigationController?.pushViewController(vc!, animated: true)
+    
     }
     
     

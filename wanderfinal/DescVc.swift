@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import MapKit
+import CoreData
 class DescVc: UIViewController  {
 
     @IBOutlet weak var UserName: UITextField!
@@ -17,32 +18,71 @@ class DescVc: UIViewController  {
     @IBOutlet weak var Longitude: UITextField!
     @IBOutlet weak var pickgender: UIPickerView!
     @IBOutlet weak var Gender: UILabel!
-    
+    @IBOutlet weak var countrylabel: UILabel!
+     var p = [Person]()
+     var persondesc :Person?
     
     var pickerData: [String] = [String]()
     let datepicker = UIDatePicker()
     var countryname : String?
     var image: UIImage?
 
+    var save = true
+    var indexEdit :Int?
     
-    
-
-    
-    @IBOutlet weak var countrylabel: UILabel!
+        var personlist = [Person]()
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         createdatepicker()
-      
         pickgender.isHidden = true
-       
-        countrylabel.text  = countryname
+       countrylabel.text  = countryname
     
+           p = fetchRecords()
+        
+        if indexEdit != nil {
+                  
+                  print(p[indexEdit!])
+              
+                  persondesc = p[indexEdit!]
+//
+//                  longi.text = String( p[indexEdit!].long)
+//                  lat.text = String( p[indexEdit!].lat)
+//                  locationTitle.text = String(p[indexEdit!].locationtitle!)
+//                  locationSubtitle.text = String(p[indexEdit!].locationsubtitile!)
+
+            UserName.text = String( p[indexEdit!].name!)
+           // Birthday.text = String(p[indexEdit!].birthday!)
+            Gender.text  = String (p[indexEdit!].gender!)
+            countrylabel.text =  String(p[indexEdit!].country!)
+            Latitude.text = String(p[indexEdit!].lat)
+            Longitude.text = String(p[indexEdit!].lad)
+                  
+              }
+        if p[indexEdit!].hasPhoto {
+          if let theImage = p[indexEdit!].photoImage {
+                   show(image: theImage)
+                 }
+        }
+        
         
     }
  
+    
+    
+    func fetchRecords() -> [Person]{
+          //
+           let fetchRequest = NSFetchRequest<Person>(entityName: "Person")
+           
+           do{
+               personlist = try ViewController.managedContext.fetch(fetchRequest)
+           }catch{
+               print(error)
+           }
+           return personlist
+       }
 
     @IBAction func selectcon(_ sender: Any) {
 
@@ -53,7 +93,7 @@ class DescVc: UIViewController  {
     func show(image: UIImage) {
    
         
-        UserImage.image = image
+    UserImage.image = image
     UserImage.isHidden = false
 
     }
@@ -102,10 +142,8 @@ class DescVc: UIViewController  {
         let slad = Double(Latitude.text!)
         let slon = Double(Longitude.text!)
         
-    let cpp = Person(context: ViewController.managedContext)
-  
-
-        cpp.name = UserName.text
+      let cpp = Person(context: ViewController.managedContext)
+       cpp.name = UserName.text
         cpp.country = countryname
         cpp.gender = Gender.text
         //cpp.birthday = Date(Birthday.text)

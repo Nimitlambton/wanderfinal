@@ -75,7 +75,8 @@ extension ListView :UITableViewDataSource , UITableViewDelegate{
         
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "abc") as? DescVc
         
-        
+        vc?.indexEdit = indexPath.row
+        vc?.save = false
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }

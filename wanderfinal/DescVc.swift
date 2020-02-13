@@ -64,7 +64,7 @@ class DescVc: UIViewController  {
 //
 
             UserName.text = String( p[indexEdit!].name!)
-           // Birthday.text = String(p[indexEdit!].birthday!)
+            Birthday.text = "\(p[indexEdit!].birthday!)"
             Gender.text  = String (p[indexEdit!].gender!)
             countrylabel.text =  String(p[indexEdit!].country!)
             Latitude.text = String(p[indexEdit!].lat)
@@ -227,7 +227,7 @@ class DescVc: UIViewController  {
        cpp.name = UserName.text
         cpp.country = countryname
         cpp.gender = Gender.text
-       // cpp.birthday = Date(Birthday.text)
+            cpp.birthday = datepicker.date
            
             if let image = image {
               

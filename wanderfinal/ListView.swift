@@ -11,6 +11,8 @@ import CoreData
 
 class ListView: UIViewController {
 
+    
+    
     @IBOutlet weak var mytab: UITableView!
     
     var personlist = [Person]()
@@ -32,9 +34,7 @@ class ListView: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-           
-           
-       
+   
            p = fetchRecords()
         filter = p
        
@@ -49,6 +49,14 @@ class ListView: UIViewController {
             "nodatacell")
         
        }
+    
+    
+    // MARK: - Properties
+       lazy var dateFormatter: DateFormatter = {
+         let formatter = DateFormatter()
+         formatter.dateStyle = .short
+         return formatter
+       }()
     
     
     func fetchRecords() -> [Person]{
@@ -115,7 +123,7 @@ extension ListView :UITableViewDataSource , UITableViewDelegate{
   
      let cell = tableView.dequeueReusableCell(withIdentifier: "abc", for: indexPath) as! cellcontrol
     cell.name.text = filter[indexPath.row].name
-    cell.birthday.text = "\(String(describing: (filter[indexPath.row].birthday)))"
+            cell.birthday.text = "\(dateFormatter.string(from: p[indexPath.row].birthday!))"
     cell.gender.text =  filter[indexPath.row].gender
     cell.country.text = filter[indexPath.row].country
         cell.img.image = filter[indexPath.row].photoImage

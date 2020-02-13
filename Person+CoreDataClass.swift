@@ -17,6 +17,9 @@ public class Person: NSManagedObject , MKAnnotation{
     
     
     
+    
+    
+    
     public var coordinate: CLLocationCoordinate2D {
      
         return CLLocationCoordinate2DMake(lat, lad)
@@ -46,12 +49,24 @@ public class Person: NSManagedObject , MKAnnotation{
     
     }
     
-    var photoURL: URL {
+   var photoURL: URL {
       assert(photoID != nil, "No photo ID set")
       let filename = "Photo-\(photoID!.intValue).jpg"
       return applicationDocumentsDirectory.appendingPathComponent(filename)
     }
 
+    
+    func removePhotoFile() {
+      if hasPhoto {
+        do {
+          try FileManager.default.removeItem(at: photoURL)
+        } catch {
+          print("Error removing file: \(error)")
+        }
+      }
+    }
+
+    
     
     
     var photoImage: UIImage? {
@@ -71,6 +86,8 @@ public class Person: NSManagedObject , MKAnnotation{
         
  
     }
+    
+   
     
     
     

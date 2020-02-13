@@ -21,7 +21,7 @@ class DescVc: UIViewController  {
     @IBOutlet weak var countrylabel: UILabel!
     
      var locationToEdit: Person?
-     
+     var index = 0
     
     var p = [Person]()
      var persondesc :Person?
@@ -36,7 +36,14 @@ class DescVc: UIViewController  {
     
         var personlist = [Person]()
    
+
     
+    override func viewWillAppear(_ animated: Bool) {
+     
+          countrylabel.text  = countryname
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -221,30 +228,49 @@ class DescVc: UIViewController  {
         cpp.country = countryname
         cpp.gender = Gender.text
        // cpp.birthday = Date(Birthday.text)
-       
-        
-        if let image = image {
-         
-            if cpp.hasPhoto {
-            
-            cpp.photoID = Person.nextPhotoID() as NSNumber
-        
-            print("this is pohotot\(cpp.photoID)")
-          
-            
-            }
-            if let data = image.jpegData(compressionQuality: 0.5) {
-                
-            do {
-               
-              try data.write(to: cpp.photoURL, options: .atomic)
-            } catch {
+           
+            if let image = image {
               
-                print("Error writing file: \(error)")
-            
+                 if cpp.hasPhoto {
+                 
+                 cpp.photoID = Person.nextPhotoID() as NSNumber
+             
+                 print("this is pohotot\(cpp.photoID)")
+               
+                 
+                 }
+                 if let data = image.jpegData(compressionQuality: 0.5) {
+                     
+                 do {
+                    
+                   try data.write(to: cpp.photoURL, options: .atomic)
+                 } catch {
+                   
+                     print("Error writing file: \(error)")
+                 
+                     }
+               }
+             }
+            do{
+                 try! ViewController.managedContext.save()
+                afterDelay(0.6){
+                    
                 }
-          }
-        }
+            }catch{
+                fatalError()
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         
         cpp.lat = slad! ?? 0.0
         
@@ -256,7 +282,7 @@ class DescVc: UIViewController  {
          let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ListView") as? ListView
         
         self.navigationController?.popToRootViewController(animated: true)
-     
+      try! ViewController.managedContext.save()
      }
     
     }

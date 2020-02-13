@@ -114,11 +114,11 @@ extension ListView :UITableViewDataSource , UITableViewDelegate{
             
   
      let cell = tableView.dequeueReusableCell(withIdentifier: "abc", for: indexPath) as! cellcontrol
-    cell.name.text = p[indexPath.row].name
-    cell.birthday.text = "\(String(describing: (p[indexPath.row].birthday)))"
-    cell.gender.text =  p[indexPath.row].gender
-    cell.country.text = p[indexPath.row].country
-        cell.img.image = p[indexPath.row].photoImage
+    cell.name.text = filter[indexPath.row].name
+    cell.birthday.text = "\(String(describing: (filter[indexPath.row].birthday)))"
+    cell.gender.text =  filter[indexPath.row].gender
+    cell.country.text = filter[indexPath.row].country
+        cell.img.image = filter[indexPath.row].photoImage
         return cell
    
         }
@@ -133,6 +133,40 @@ extension ListView :UITableViewDataSource , UITableViewDelegate{
         vc?.indexEdit = indexPath.row
         vc?.save = false
         self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+     
+        guard let personToDelete = p[indexPath.row].self as? Person,
+        
+                 editingStyle == .delete else {
+               
+                     return
+           }
+
+             ViewController.managedContext.delete(personToDelete)
+          
+           do {
+             try ViewController.managedContext.save()
+                p.remove(at: indexPath.row)
+            mytab.reloadData()
+           } catch let error as NSError {
+             print("Saving error: \(error), description: \(error.userInfo)")
+           }
+        
+        
+      
+     
+     }
+    
+    
+    func delerec( persomntodel: Person ){
+        
+      try! ViewController.managedContext.delete(persomntodel)
+      try! ViewController.managedContext.save()
         
     }
     
@@ -158,7 +192,7 @@ extension ListView : UISearchBarDelegate{
             
         )
         
-        
+   
         
         if (filter.count <= 0){
                        

@@ -24,6 +24,17 @@ class MapView: UIViewController {
         
     }
     
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+           
+           
+       updateLocations()
+        
+       }
+    
+    
+    
       func updateLocations() {
 
          mymap.removeAnnotations(locations)
@@ -41,9 +52,16 @@ class MapView: UIViewController {
      }
     
     
-    @objc func showLocationDetails(){
+    @objc func showLocationDetails(_ sender: UIButton){
+        var buttontosend = 0
+        let button = sender as UIButton
+       buttontosend = button.tag
         
-       
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "abc") as? DescVc
+               
+       vc?.indexEdit = buttontosend
+        vc?.save = false
+        self.navigationController?.pushViewController(vc!, animated: true)
     
     }
    
@@ -72,7 +90,7 @@ extension MapView : MKMapViewDelegate{
           pinView.isEnabled = true
           pinView.canShowCallout = true
           pinView.animatesDrop = true
-          pinView.pinTintColor = UIColor(red:0.44, green:0.10, blue:0.71, alpha:1.0)
+          pinView.pinTintColor = UIColor(hue: 0.1333, saturation: 1, brightness: 1, alpha: 1.0) 
 
             //4 button type detailDisclorse
             let rightButton = UIButton(type: .contactAdd)

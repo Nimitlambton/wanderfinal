@@ -300,12 +300,12 @@ class tabelcontrol: UITableViewController {
        var countryname = countryList[indexPath.row]
         
 
-     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "abc") as? DescVc
+        let vc = self.navigationController?.viewControllers[1] as! DescVc
      
       
-      vc?.countryname = countryname
+        vc.countryname = countryname
      
-        self.navigationController?.pushViewController(vc!, animated: true)
+        self.navigationController?.popViewController(animated: true)
    
     
     }
